@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/WRAPCHICK.png" sizes="160x160px" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>WrapChick Pizza</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    margin: 0;
+    padding: 0;
+    
+}
+
+        .blog-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 30px;
+        }
+
+        .blog-post {
+            background: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            overflow: hidden;
+            width: calc(30% - 10px);
+        }
+
+        .blog-post img {
+            max-width: 100%;
+            height: 500px;
+            display: block;
+        }
+
+        .blog-content {
+            padding: 15px;
+            
+        }
+
+        .blog-content h2 {
+            font-size: 25px;
+            margin-bottom: 10px;
+            font-weight: bolder;
+        }
+
+        .blog-content h2:hover {
+            color: #f33c3c;
+            transition: all ease 0.3s;
+        }
+
+        .blog-content p {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .read-more {
+            display:inline-block;
+            align-items: center;
+            padding: 8px 12px;
+            margin-top: 10px;
+            background-color: #28a745;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .read-more:hover {
+            background-color: #218838;
+        }
+        .blog-content p {
+            overflow: hidden;
+            height: 4em; /* Adjust this value to show the desired number of lines */
+            line-height: 1.5em; /* Adjust this value to match your text's line height */
+}
+
+        .blog-content.expanded p {
+            height: auto;
+        }
+
+        .blog-content a {
+            margin-top: auto; /* Push the button to the bottom */
+            align-self: flex-start;
+            color:#fff;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+       
+        .blog-title {
+            text-align: center;
+            font-size: 30px;
+            font-family: sans-serif;
+            font-weight: bold;
+            margin: 20px 0;
+            margin-top: 110px;
+        }
+
+        
+/* Styles for mobile phones  */
+@media (min-width: 350px) and (max-width: 500px) {
+    .blog-post {
+        width: 100%;
+    }
+    .blog-post img {
+        position: static;
+        width: 100%;
+        height: 300px; /* Fixed height for the images */
+        
+    }
+    .blog-title{
+        margin-bottom: -40px;
+        margin-top: 90px;
+    }
+}
+
+
+
+       
+    </style>
+</head>
+<body>
+    <special-header></special-header>
+    <div class="blog-title">BLOGS</div>
+    <div class="blog-container">
+        <div class="blog-post">
+            <img src="./images/B.jpeg" alt="Blog Image">
+            <div class="blog-content">
+                <h2>Why Wrapchick Pizza is the Best Pizza Franchise in India</h2>
+                <p>Are you looking to own the best pizza franchise in India? Look no further than Wrapchick Pizza! We're offering a unique NO ROYALTY Pizza Franchise that lets you start your own business without excessive costs. Our comprehensive franchise package includes essential kitchen equipment such as a commercial pizza oven, deep freezer, refrigerator, fryer, griller, waffle machine, and blender. Additionally, you receive a startup kit worth Rs 50,000, including Wrapchick Pizza aprons, caps, brand tees, and pizza box samples. We also provide all the recipes, FSSAI License, and seamless integration with Swiggy & Zomato. Our support extends to hiring staff, menu customization, staff training, cafe management software, and local marketing plans. For an investment of just Rs.2,89,999 + taxes, you get franchise support for 10 years. Invest in the best pizza franchise under 2 lakh eighty thousand and start serving delicious pizzas today!</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="blog-post">
+            <img src="./images/C.jpeg" alt="Blog Image">
+            <div class="blog-content">
+                <h2>Top Benefits of Owning a Wrapchick Pizza Franchise</h2>
+                <p>Owning a Wrapchick Pizza franchise comes with numerous benefits. As the best pizza franchise under 2 lakh eighty thousand, our model is designed to be affordable and profitable. Our comprehensive package includes essential kitchen equipment, such as a commercial pizza oven, deep freezer, refrigerator, fryer, griller, waffle machine, and blender. You'll receive a startup kit worth Rs 50,000, complete with aprons, caps, brand tees, pizza box samples, and recipes. We handle FSSAI License, Swiggy & Zomato integration, staff hiring, and training. Our menu features a variety of pizzas, burgers, wraps, waffles, coolers, shakes, and crispy chicken. With an investment of Rs.2,89,999 + taxes, you get 10 years of continuous support and local marketing plans. Join Wrapchick Pizza and enjoy the benefits of owning a successful franchise.
+                </p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="blog-post">
+            <img src="./images/D.jpeg" alt="Blog Image">
+            <div class="blog-content">
+                <h2>Why Wrapchick Pizza is the Best Franchise in Bihar</h2>
+                <p>Choosing the right franchise can be challenging, but Wrapchick Pizza makes it easy. As the best franchise in Bihar, we offer a comprehensive package for Rs.2,89,999 + taxes. This includes all the necessary kitchen equipment, such as a commercial pizza oven, deep freezer, refrigerator, fryer, griller, waffle machine, and blender. Our startup kit, worth Rs 50,000, provides aprons, caps, brand tees, pizza box samples, and recipes. We assist with FSSAI License, Swiggy & Zomato integration, and staff hiring. Our diverse menu features pizzas, burgers, wraps, waffles, coolers, shakes, and crispy chicken. With 10 years of support and local marketing plans, Wrapchick Pizza ensures your franchise is a success. Join the best franchisee in Bihar and start your profitable business today!</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="blog-post">
+            <img src="./images/E.jpeg" alt="Blog Image">
+            <div class="blog-content">
+                <h2>Affordable Franchise Opportunities in Bihar</h2>
+                <p>Looking for an affordable and profitable franchise opportunity in Bihar? Wrapchick Pizza offers the best franchise in Bihar, providing a comprehensive and budget-friendly package for aspiring entrepreneurs. With an investment of only Rs.2,89,999 + taxes, you receive all necessary kitchen equipment, including a commercial pizza oven, deep freezer, refrigerator, fryer, griller, waffle machine, and blender. Our startup kit, worth Rs 50,000, includes aprons, caps, brand tees, pizza box samples, and recipes. We ensure your success with staff training, hiring support, FSSAI License, and Swiggy & Zomato integration. Our extensive menu features a variety of pizzas, burgers, wraps, waffles, coolers, shakes, and crispy chicken, catering to diverse tastes. Join the Wrapchick Pizza family and be part of the best franchisee in Bihar, enjoying 10 years of continuous support and guidance.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="blog-post">
+            <img src="./images/F.jpeg" alt="Blog Image">
+            <div class="blog-content">
+                <h2>Expanding Your Business with Wrapchick Pizza in Jharkhand</h2>
+                <p>If you're considering expanding your business in Jharkhand, Wrapchick Pizza offers the best franchise opportunity in the region. Our franchise package, priced at Rs.2,89,999 + taxes, includes all essential kitchen equipment, such as a commercial pizza oven, deep freezer, refrigerator, fryer, griller, waffle machine, and blender. You'll also receive a startup kit worth Rs 50,000, which includes aprons, caps, brand tees, pizza box samples, and recipes. We provide extensive support with FSSAI License, Swiggy & Zomato integration, staff hiring, and training. Our diverse menu includes pizzas, burgers, wraps, waffles, coolers, shakes, and crispy chicken, ensuring a broad customer appeal. With 10 years of franchise support and comprehensive local marketing plans, Wrapchick Pizza stands as the best franchise in Jharkhand. Join us and watch your business thrive!</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="blog-post">
+            <img src="./images/G.jpeg" alt="Blog Image">
+            <div class="blog-content">
+                <h2>Comprehensive Franchise Support with Wrapchick Pizza</h2>
+                <p>At Wrapchick Pizza, we believe in providing comprehensive franchise support to ensure your success. Our franchise package, priced at Rs.2,89,999 + taxes, includes all the essential kitchen equipment, such as a commercial pizza oven, deep freezer, refrigerator, fryer, griller, waffle machine, and blender. You'll receive a startup kit worth Rs 50,000, featuring aprons, caps, brand tees, pizza box samples, and recipes. We handle all the legalities with FSSAI License and offer seamless integration with Swiggy & Zomato. Our extensive support covers staff hiring, training, menu customization, and local marketing plans. Our menu boasts a variety of pizzas, burgers, wraps, waffles, coolers, shakes, and crispy chicken. With 10 years of continuous support, Wrapchick Pizza is the best pizza franchise under 2 lakh eighty thousand. Join us and embark on a successful franchise journey today!</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="blog-post">
+            <img src="./images/H.jpeg" alt="Blog Image">
+            <div class="blog-content">
+                <h2>Best Pizza Franchise Under 2 Lakh Eighty Thousand</h2>
+                <p>Wrapchick Pizza presents an incredible opportunity to own the best pizza franchise under 2 lakh eighty thousand. Our franchise model is designed to be affordable and profitable, making it an ideal choice for entrepreneurs. The package includes top-notch kitchen equipment, such as a commercial pizza oven, deep freezer, refrigerator, fryer, griller, waffle machine, and blender. You'll also receive a startup kit worth Rs 50,000, complete with aprons, caps, brand tees, pizza box samples, and recipes. We take care of all the essentials, including FSSAI License, Swiggy & Zomato integration, and staff hiring support. Our menu boasts a wide variety of items, including pizzas, burgers, wraps, waffles, coolers, shakes, and crispy chicken. With a one-time investment of Rs.2,89,999 + taxes, you get 10 years of franchise support, staff training, and local marketing plans. Start your pizza franchise journey with Wrapchick Pizza today!</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="blog-post">
+            <img src="./images/I.jpeg" alt="Blog Image">
+            <div class="blog-content">
+                <h2>The Ultimate Pizza Franchise Package from Wrapchick Pizza</h2>
+                <p>Wrapchick Pizza offers the ultimate pizza franchise package, designed to ensure your success. For an investment of Rs.2,89,999 + taxes, you receive all essential kitchen equipment, including a commercial pizza oven, deep freezer, refrigerator, fryer, griller, waffle machine, and blender. Our startup kit, worth Rs 50,000, includes aprons, caps, brand tees, pizza box samples, and recipes. We handle FSSAI License, Swiggy & Zomato integration, and staff hiring. Our menu features a wide variety of items, including pizzas, burgers, wraps, waffles, coolers, shakes, and crispy chicken. With 10 years of continuous support, Wrapchick Pizza is the best pizza franchise under 2 lakh eighty thousand. Join us and enjoy the benefits of our comprehensive franchise package.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="blog-post">
+            <img src="./images/J.jpeg" alt="Blog Image">
+            <div class="blog-content">
+                <h2>Wrapchick Pizza - A Profitable Franchise Opportunity</h2>
+                <p>Wrapchick Pizza offers a profitable franchise opportunity for aspiring entrepreneurs. With an investment of Rs.2,89,999 + taxes, you receive a comprehensive package that includes all necessary kitchen equipment, such as a commercial pizza oven, deep freezer, refrigerator, fryer, griller, waffle machine, and blender. Our startup kit, worth Rs 50,000, includes aprons, caps, brand tees, pizza box samples, and recipes. We provide support with FSSAI License, Swiggy & Zomato integration, and staff hiring. Our diverse menu includes pizzas, burgers, wraps, waffles, coolers, shakes, and crispy chicken. With 10 years of franchise support and local marketing plans, Wrapchick Pizza ensures your success. Invest in the best pizza franchise under 2 lakh eighty
+
+                    thousand and start your profitable business today!
+                   </p>
+                   <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="blog-post">
+            <img src="./images/K.jpeg" alt="Blog Image">
+            <div class="blog-content">
+                <h2>How Wrapchick Pizza Ensures Franchise Success</h2>
+                <p>At Wrapchick Pizza, we are committed to ensuring the success of our franchisees. Our franchise package, priced at Rs.2,89,999 + taxes, includes all essential kitchen equipment, such as a commercial pizza oven, deep freezer, refrigerator, fryer, griller, waffle machine, and blender. You'll receive a startup kit worth Rs 50,000, featuring aprons, caps, brand tees, pizza box samples, and recipes. We handle FSSAI License, Swiggy & Zomato integration, and staff hiring. Our support extends to menu customization, staff training, and local marketing plans. Our diverse menu includes pizzas, burgers, wraps, waffles, coolers, shakes, and crispy chicken. With 10 years of continuous support, Wrapchick Pizza is the best pizza franchise under 2 lakh eighty thousand. Join us and experience unparalleled franchise support.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="blog-post">
+            <img src="./images/L (3).jpeg" alt="Blog Image">
+            <div class="blog-content">
+                <h2>Invest in the Best Franchise in Jharkhand with Wrapchick Pizza</h2>
+                <p>Wrapchick Pizza offers the best franchise in Jharkhand, providing a lucrative opportunity for business expansion. Our franchise package includes essential kitchen equipment, such as a commercial pizza oven, deep freezer, refrigerator, fryer, griller, waffle machine, and blender. You'll receive a startup kit worth Rs 50,000, featuring aprons, caps, brand tees, pizza box samples, and recipes. We provide support with FSSAI License, Swiggy & Zomato integration, staff hiring, and training. Our diverse menu includes pizzas, burgers, wraps, waffles, coolers, shakes, and crispy chicken. With an investment of Rs.2,89,999 + taxes, you get 10 years of continuous support and local marketing plans. Join Wrapchick Pizza, the best franchise in Jharkhand, and expand your business successfully.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="blog-post">
+            <img src="./images/M (2).jpeg" alt="Blog Image">
+            <div class="blog-content">
+                <h2>Join Wrapchick Pizza - The Best Franchise Opportunity in India</h2>
+                <p>Wrapchick Pizza offers the best franchise opportunity in India, providing a unique NO ROYALTY model that ensures maximum profitability. Our franchise package includes top-quality kitchen equipment, such as a commercial pizza oven, deep freezer, refrigerator, fryer, griller, waffle machine, and blender. You'll also receive a startup kit worth Rs 50,000, featuring aprons, caps, brand tees, pizza box samples, and recipes. We take care of all the legalities with FSSAI License and offer seamless integration with Swiggy & Zomato. Our extensive support includes staff hiring, training, menu customization, and local marketing plans. Our diverse menu includes pizzas, burgers, wraps, waffles, coolers, shakes, and crispy chicken. With a one-time investment of Rs.2,89,999 + taxes, you get 10 years of franchise support. Choose Wrapchick Pizza and embark on a successful franchise journey today!
+                </p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+    </div>
+    <special-footer>
+       
+    </special-footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarNav = document.querySelector('.navbar-nav');
+        
+            navbarToggler.addEventListener('click', function () {
+                navbarNav.classList.toggle('show');
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.blog-content a').forEach(button => {
+            button.addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent the default anchor click behavior
+                const blogContent = this.parentElement;
+                blogContent.classList.toggle('expanded');
+                this.textContent = blogContent.classList.contains('expanded') ? 'Read Less' : 'Read More';
+            });
+        });
+    });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
