@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./images/WRAPCHICK.png" sizes="160x160px" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js" integrity="sha512-d8F1J2kyiRowBB/8/pAWsqUl0wSEOkG5KATkVV4slfblq9VRQ6MyDZVxWl2tWd+mPhuCbpTB4M7uU/x9FlgQ9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <title>WrapChick Pizza</title>
+    <style>
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    background-color:#fff;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+ 
+.navbar {
+    background-color: rgba(255, 255, 31, 1);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 8%; /* Add padding for spacing */
+    font-weight: bolder;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 97px;
+    width: 100%;
+    z-index: 1000;
+    margin-left: 0px;
+    border-bottom: 1px solid transparent; /* Initially transparent */
+    transition: border-bottom-color 0.3s ease; /* Smooth transition */
+}
+
+.navbar-nav {
+    margin-left: -80px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.navbar-nav .nav-item {
+    margin: 0px; /* Add margin between nav items */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-nav .nav-item .nav-link, .navbar-nav .nav-item a {
+    color: black; /* Font color black */
+    font-size: 15px;
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make the font bold */
+    padding: 8px 10px; /* Add padding for better spacing */
+}
+
+.navbar-nav .nav-item .nav-link:hover, .navbar-nav .nav-item a:hover {
+    color: red; /* Font color red on hover */
+}
+
+/* Specific Franchise Enquiry Button Styles */
+.franchise-enquiry {
+    color: black; /* Red text color */
+    padding: 12px 30px; /* Adjusted padding for better button size */
+    font-size: 1.2rem;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    position: fixed;
+    overflow: hidden;
+    transition: color 0.3s, transform 0.3s;
+    z-index: 1001;
+}
+
+.franchise-enquiry::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px; /* Height of the underline */
+    background-color: #ff0000; /* Red color for underline */
+    transform: scaleX(0); /* Initially no width */
+    transform-origin: left;
+    transition: transform 0.3s;
+    z-index: -1;
+}
+
+.franchise-enquiry:hover::before {
+    transform: scaleX(1); /* Expand underline on hover */
+}
+
+.franchise-enquiry:hover {
+    color: red; /* White text color on hover */
+    text-decoration: none; /* Remove underline on hover */
+}
+
+.phone-number {
+    display: block;
+    font-size: 1.1rem;
+    color: black;
+    margin-top: 2px;
+    white-space: nowrap;
+}
+
+.phone-number:hover {
+    color: red; /* Color change on hover */
+}
+
+/* Ensure navbar brand logo has appropriate styles */
+.navbar-brand2 img {
+    height: 90px;
+}
+.navbar-brand1 {
+    display: none;
+}
+
+.fixed-enquiry {
+    position: fixed;
+    right: 0px;
+    top: 5px;
+}
+
+/* Additional media query to ensure consistency for screens larger than 1400px */
+@media (min-width: 991px) and (max-width: 1100px){
+    .navbar {
+        padding: 10px 8%; /* Adjust padding for larger screens if necessary */
+    }
+
+    .navbar-nav .nav-item {
+        margin: 0px; /* Keep margin between nav items */
+    }
+
+    .fixed-enquiry {
+        right: 0px;
+    }
+}
+@media (min-width: 1200px) and (max-width: 1400px) {
+    .navbar {
+        padding: 10px 5%; /* Adjust padding to fit the screen size */
+        height: 97px;
+    }
+
+    .navbar-nav {
+        margin-left: -50px; /* Adjust margin for better alignment */
+    }
+
+    .navbar-nav .nav-item {
+        margin: 18px; /* Keep margin between nav items */
+    }
+
+    .navbar-nav .nav-item .nav-link, .navbar-nav .nav-item a {
+        font-size: 15px; /* Ensure font size is consistent */
+        padding: 8px 10px; /* Maintain padding for spacing */
+    }
+}
+@media (min-width: 1400px) and (max-width: 1700px) {
+    .navbar {
+        padding: 10px 5%; /* Adjust padding to fit the screen size */
+        height: 97px;
+    }
+
+    .navbar-nav {
+        margin-left: -50px; /* Adjust margin for better alignment */
+    }
+
+    .navbar-nav .nav-item {
+        margin: 27px; /* Keep margin between nav items */
+    }
+
+    .navbar-nav .nav-item .nav-link, .navbar-nav .nav-item a {
+        font-size: 15px; /* Ensure font size is consistent */
+        padding: 8px 10px; /* Maintain padding for spacing */
+    }
+}
+
+/* Styles for mobile phones  */
+@media (min-width: 350px) and (max-width: 600px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px; /* Reduced height of the navbar */
+        padding: 0 20px; /* Adjusted padding for mobile */
+        background-color: rgba(255, 255, 31, 1); /* Yellow background */
+        z-index: 1000;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column; /* Arrange nav items in column */
+        align-items: center; /* Center nav items */
+        background-color: rgba(255, 255, 31, 1); /* Yellow background */
+        width: 100%; /* Full width for mobile */
+        margin-top: 10px; /* Margin for spacing */
+        margin-left: 0px;
+        margin-right: 10px;
+    }
+
+    .nav-item {
+        text-decoration: none;
+        color: #333; /* Black color */
+        text-align: center; /* Center text */
+    }
+    .navbar-nav .nav-item .nav-link, .navbar-nav .nav-item a {
+    color: black; /* Font color black */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make the font bold */
+    padding: 0px; /* Add padding for better spacing */
+}
+
+    .navbar-brand1 {
+        order: -1; /* Move brand to the left */
+        display: block;
+        margin-left: -20px; /* Adjust margin for brand */
+    }
+
+    .navbar-brand2 {
+        order: -1; /* Move brand to the left */
+        display: none;
+    }
+
+    .navbar-toggler {
+        background-color: rgba(255, 255, 31, 1); /* Yellow background */
+        position: fixed; /* Fix position */
+        top: 20px; /* Adjust vertical position as needed */
+        right: 10px; /* Align toggler to the right */
+        padding: 10px; /* Adjust padding */
+        z-index: 1000; /* Ensure it appears above other elements */
+        cursor: pointer; /* Change cursor to pointer for usability */
+    }
+
+    .franchise-enquiry {
+        display: none; /* Hide franchise enquiry for mobile */
+    }
+    .fixed-enquiry{
+        display: block;
+        position: sticky;
+        z-index: 1000;
+    }
+    .franchise-enquiry {
+            color: black; /* Red text color */
+            padding: 12px 30px; /* Adjusted padding for better button size */
+            font-size: 16px;
+            font-family: sans-serif;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            position: fixed;
+            overflow: hidden;
+            transition: color 0.3s, transform 0.3s;
+            right: 60px;
+            
+        }
+        .franchise-enquiry::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 3px; /* Height of the underline */
+            background-color: #ff0000; /* Red color for underline */
+            transform: scaleX(0); /* Initially no width */
+            transform-origin: left;
+            transition: transform 0.3s;
+            z-index: -1;
+        }
+        
+        .franchise-enquiry:hover::before {
+            transform: scaleX(1); /* Expand underline on hover */
+        }
+        
+        .franchise-enquiry:hover {
+            color: red; /* White text color on hover */
+            text-decoration: none; /* Remove underline on hover */
+        }
+        
+        .phone-number {
+            display: block;
+            font-size: 1.1rem;
+            color: black;
+            white-space: nowrap;
+        }
+        
+        .phone-number:hover {
+            color: red; /* Color change on hover */
+        }
+}
+
+
+.video-container {
+            position: relative;
+            margin-top: 20px;
+            top: 80px; /* Adjust according to the navbar height */
+            width: 100%;
+            overflow: hidden;
+        }
+        .video-container video {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+/* Styles for mobile phones  */
+@media (min-width: 350px) and (max-width: 500px) {
+    .video-container {
+        margin-top: 3px;
+    }
+}
+
+/* WHAT WE OFFER! */
+        #food {
+            margin-top: 25px; /* Add margin to create space below the video */
+            padding: 25px 0 25px 0;
+           
+            
+        }
+        #section {
+            padding: 25px 0 25px 0;
+            text-align: center;
+            margin-top: 10px;
+            font-family:sans-serif;
+            font-size: 30px;
+            font-weight: bold;
+            
+        }
+        .flip-container {
+            perspective: 1000px;
+            margin-bottom: 20px;
+            width: 100%;
+            
+        }
+        .flipper {
+            position: relative;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 400px;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        .front, .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+        .front img, .back img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .front {
+            z-index: 2;
+            transform: rotateY(0deg);
+        }
+        .back {
+            transform: rotateY(180deg);
+        }
+        .flip-container:hover .flipper {
+            transform: rotateY(180deg);
+        }
+        .desc {
+        padding: 15px;
+        text-align: center;
+        font-size: 18px;
+        font-family: sans-serif;
+        font-weight: bold; /* Make the text bold */
+        color: #333; /* Use a dark color for readability */
+        letter-spacing: 1px; /* Add some letter spacing */
+        line-height: 1.2; /* Improve line height for better readability */
+        background: linear-gradient(to right, #f5f78f, #f7fb04); /* Add a subtle background gradient */
+        border-radius: 8px; /* Round the corners */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+        width: fit-content; /* Adjust width to fit the content */
+}
+
+        * {
+            box-sizing: border-box;
+        }
+        .responsive {
+            padding: 0 6px;
+            float: left;
+            width: 24.99999%;
+            margin-bottom: 220px;
+            margin-top: -10px;
+        }
+        @media (min-width: 800px) and (max-width: 1100px) {
+            .responsive{
+                position: relative;
+                margin-bottom: 80px;
+            }
+        }
+        @media (min-width: 1101px) and (max-width: 1400px) {
+            .responsive{
+                position: relative;
+                margin-bottom: 145px;
+            }
+        }
+
+/* Styles for mobile phones  */
+@media (min-width: 350px) and (max-width: 500px) {
+    #section{
+        margin-bottom: -20px;
+    }
+            .responsive {
+                width: 50%;
+                margin: 90px 0;
+                margin-bottom: -100px;
+                
+                
+            }
+            .flip-container {
+        perspective: 1000px;
+        
+     
+    }
+            .flipper {
+                position: relative;
+            margin-top: -70px;
+            margin-bottom: 40px;
+            width: 100%;
+            height: 500px;
+            display: grid;
+            grid-template-columns: 2fr 1fr; /* Two columns */
+            grid-template-rows: auto; /* Auto rows for variable height content */
+            max-width: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            box-sizing: border-box;
+    }
+    .desc {
+        font-size: 16px;
+    }
+    
+    .front, .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            
+        }
+        .front img, .back img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .front {
+            z-index: 2;
+            transform: rotateY(0deg);
+        }
+        .back {
+            transform: rotateY(180deg);
+        }
+        .flip-container:hover .flipper {
+            transform: rotateY(180deg);
+        }
+   
+}
+        
+        
+        .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+  /* Client Gallery Section */
+  .client-gallery {
+            text-align: center;
+            margin-top: -20px;
+            padding: 50px 20px;
+            background-color: #f8f9fa;
+        }
+
+        .client-gallery h2 {
+            font-size: 30px;
+            font-family: sans-serif;
+            font-weight: bold;
+            color: #333333;
+            margin-top: 0px;
+            margin-bottom: 10px;
+        }
+
+        .gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -60px;
+    gap: 40px;
+}
+
+.gallery video {
+    max-width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: -10px;
+    outline: none;
+    cursor: pointer;
+}
+
+.gallery video:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.play-icon, .stop-icon {
+    position: absolute;
+    font-size: 3em;
+    color: rgba(255, 255, 255, 0.9);
+    z-index: 1;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.stop-icon {
+    font-size: 1.5em;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px;
+    border-radius: 50%;
+    top: 5px;
+    right: 5px;
+    left: auto;
+    transform: translate(0, 0);
+}
+
+.video-contain {
+    position: relative;
+    margin: 10px;
+    padding: 5px;
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (min-width: 350px) and (max-width: 500px) {
+    .client-gallery h2{
+        margin-top: -30px;
+    }
+    .gallery {
+        display: flex;
+        flex-direction: row;
+        gap: 10px; /* Adjust gap as needed */
+        margin-bottom: -30px; /* Adjust margin as needed */
+    }
+    .video-contain {
+        width: 100%;
+        height: auto;
+    }
+    .gallery video {
+        width: 100%;
+        height: auto;
+        
+    }
+    .play-icon, .stop-icon {
+        font-size: 2em; /* Adjust icon size for mobile screens */
+    }
+    .stop-icon {
+        font-size: 1.2em; /* Adjust stop icon size for mobile screens */
+    }
+}
+
+@media (min-width: 350px) and (max-width: 445px) {
+    .client-gallery h2{
+        margin-top: -80px;
+    }
+}
+
+
+
+
+
+
+
+
+        /* Successful Stories */
+        #SUCCESSFUL-STORIES{
+            font-size: 30px;
+            font-family: sans-serif;
+            font-weight: bold;
+            margin-top: 0px;
+        
+        }
+        @media (min-width: 991px) and (max-width: 1300px) {
+            #SUCCESSFUL-STORIES{
+                margin-top: 30px;
+            } 
+        }
+
+        /* Styles for mobile phones  */
+        @media (min-width: 350px) and (max-width: 500px) {
+            #SUCCESSFUL-STORIES{
+                margin-top: -30px;
+            }
+        }
+
+        .swiper {
+            width: 50%;
+            height: 50%;
+            position: relative;
+            overflow: hidden; 
+            margin-top: -20px;
+            margin-bottom: 10px;
+            
+        }
+        .swiper-slide {
+            text-align: center;
+            overflow: hidden;
+            font-size: 20px;
+            transition: transform 0.5s ease;
+            background:rgba(243, 243, 5, 0.5);
+            padding: 5px;
+            box-sizing: border-box;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+.swiper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 0, 0.5), rgba(255, 0, 0, 0.938));
+    opacity: 0.7;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    background-color: var(--black-color);
+    color: var(--white-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    background-color: rgb(248, 9, 9); /* Change the background color on hover */
+}
+
+
+        .swiper-slide img {
+            width: 100%;
+            height: 200px;
+            border-radius: 0%;
+        }
+
+        .slide-content {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    
+}
+
+.place-name {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.786);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 19px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #000;
+}
+
+/* Optional: CSS animation */
+.place-name {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.swiper-slide:hover .place-name {
+    opacity: 1;
+}
+
+/* Styles for mobile phones  */
+@media (min-width: 350px) and (max-width: 500px) {
+    .swiper {
+        width: 120%;
+            height: 120px;
+            position: relative;
+            overflow: hidden; 
+    }
+    .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+
+        .slide-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    
+}
+    .swiper-slide {
+        font-size: 18px; /* Decrease font size for smaller screens */
+    }
+    
+
+    .place-name {
+        font-size: 16px; /* Decrease font size for smaller screens */
+        bottom: 5px; /* Adjust position */
+        left: 5px; /* Adjust position */
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none; /* Hide navigation arrows on mobile screens */
+    }
+}
+
+
+
+.statistics-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+    background-color: rgba(255, 251, 0, 0.878); /* Matching navbar background color */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.stat-box {
+    text-align: center;
+    color: #000; /* Text color matching your design */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* White background with some opacity */
+    border-radius: 10px;
+    width: 200px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, background-color 0.3s; /* Smooth transitions for hover effects */
+}
+
+.stat-box:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+    background-color: rgba(255, 255, 255, 1); /* Full opacity background on hover */
+}
+
+.stat-box .icon {
+    font-size: 50px;
+    margin-bottom: 10px;
+    color: #ff0000; /* Icon color */
+}
+
+.stat-box .counter {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.stat-box .description {
+    font-family:sans-serif;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+
+/* Styles for mobile phones  */
+@media (min-width: 350px) and (max-width: 500px) {
+    .statistics-section {
+        flex-wrap: wrap; /* Allow flex items to wrap */
+        justify-content: center; /* Center items when wrapping */
+    }
+
+    .stat-box {
+        width: calc(50% - 20px); /* Two boxes side by side with margin */
+        margin: 10px; /* Margin between boxes */
+    }
+}
+
+
+
+.fp-title {
+    text-align: center;
+    font-family:sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.fp-swiper-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+    margin-top: -10px;
+    margin-bottom: -50px;
+}
+.fp-swiper-wrapper{
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.fp-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #ffcc00; /* Yellow background */
+    padding: 20px;
+    box-sizing: border-box;
+    
+}
+
+.fp-image-container {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 5px solid #fff; /* Optional: white border around the image */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: shadow effect */
+}
+
+.fp-image-container img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    transform: scale(1.3); /* Permanent zoom */
+}
+
+.fp-quote {
+    font-size: 1rem;
+    color: #333; /* Text color */
+    max-width: 600px;
+    margin-top: 10px;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+.fp-pagination {
+    position: static;
+    margin-top: 20px;
+}
+
+
+.fp-button-prev,
+.fp-button-next {
+    color: #333; /* Navigation arrows color */
+}
+
+/* Styles for mobile phones  */
+@media (min-width: 350px) and (max-width: 500px) {
+    .fp-quote{
+        font-size: 16px;
+    }
+}
+
+.franchise-section {
+    background-color: rgba(255, 251, 0, 0.878); /* Yellow color */
+    font-family: sans-serif;
+    margin-bottom: 20px;
+  
+}
+
+.franchise-content {
+    text-align: left; /* Align text content to the left */
+}
+
+.franchise-content h2 {
+    color: #000; /* Black text */
+    font-size: 30px;
+    position: relative;
+    font-weight: bold;
+    left: 100px;
+    top: 40px;
+}
+
+.franchise-content p {
+    margin: 0; /* Remove default paragraph margin */
+}
+
+
+.book-now-button {
+    background-color: red; /* Red color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    left: 80%;
+    bottom: 20px; /* Adjust distance from bottom */
+    right: 20px; /* Adjust distance from right */
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+
+.book-now-button:hover {
+    background-color: white;
+    color: #ff0000; /* Red color on hover */
+}
+
+/* Styles for mobile phones  */
+@media (min-width: 350px) and (max-width: 500px) {
+    
+.franchise-section {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+    .franchise-content h2{
+        margin-left: -190px;
+        top: 10px;
+        text-align: center;
+        font-size: 16px;
+    }
+    .book-now-button {
+        position: relative;
+        font-size: 16px;
+        bottom: 0px;
+        margin-top: 5px;
+        left: 110px;
+        text-align: center;
+        justify-self: center;
+    }
+}
+
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: #ffcc00;
+    padding-top: 50px;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+.footer .contact-info {
+    color: #fff;
+}
+
+.footer .contact-info a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin-right: 20px;
+}
+
+.footer ul li {
+    margin-right: 10px;
+}
+
+.footer ul li i {
+    margin-right: 10px;
+}
+
+.footer .quick-links a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer .social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    color: #333;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.footer .social-links a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Styles for mobile phones  */
+@media (min-width: 350px) and (max-width: 500px) {
+    .footer {
+        background-color: #333;
+        color: #ffcc00;
+        padding: 20px 10px; /* Adjusted padding for mobile screens */
+        font-size: 16px; /* Decreased font size for smaller screens */
+        font-family: sans-serif;
+        text-align: left; /* Center align text */
+    }
+
+    .footer .contact-info {
+        color: #fff;
+    }
+
+    .footer .contact-info a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .footer ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 10px 0; /* Adjusted margin for better spacing */
+    }
+
+    .footer ul li {
+        margin-bottom: 5px; /* Adjusted bottom margin for list items */
+    }
+
+    .footer ul li i {
+        margin-right: 5px; /* Adjusted margin for list item icons */
+    }
+
+    .footer .quick-links a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .footer .social-links {
+        margin-top: 20px;
+        margin-bottom: 10px;
+         /* Added margin to separate social links */
+    }
+
+    .footer .social-links a {
+        display: inline-block;
+        width: 30px; /* Decreased width of social icons */
+        height: 30px; /* Decreased height of social icons */
+        line-height: 30px; /* Center align text vertically */
+        text-align: center;
+        margin: 3 5px; /* Adjusted margin for social icons */
+        background-color: #fff;
+        color: #333;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+    }
+
+    .footer .social-links a:hover {
+        background-color: #333;
+        color: #fff;
+    }
+}
+
+.whatsapp-icon-left, .whatsapp-icon-right {
+    position: fixed;
+    bottom: 20px; /* Adjust as needed */
+    z-index: 1000;
+    width: 80px; /* Adjust the size as needed */
+    height: 80px; /* Adjust the size as needed */
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-icon-left {
+    left: 20px; /* Adjust as needed */
+}
+
+.whatsapp-icon-right {
+    right: 20px; /* Adjust as needed */
+}
+
+.whatsapp-icon-left img, .whatsapp-icon-right img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+/* Styles for mobile phones  */
+@media (min-width: 350px) and (max-width: 500px) {
+    .whatsapp-icon-left, .whatsapp-icon-right {
+        position: fixed;
+        bottom: 20px; /* Adjust as needed */
+        z-index: 1000;
+        width: 40px; /* Adjust the size for smaller screens */
+        height: 40px; /* Adjust the size for smaller screens */
+        border-radius: 50%;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .whatsapp-icon-left {
+        left: 10px; /* Adjust as needed */
+    }
+
+    .whatsapp-icon-right {
+        right: 10px; /* Adjust as needed */
+    }
+
+    .whatsapp-icon-left img, .whatsapp-icon-right img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Icon Bottom Left -->
+<a href="https://wa.me/919508238384" class="whatsapp-icon-left" target="_blank">
+    <img src="./images/WhatsApp_icon.png" alt="WhatsApp">
+</a>
+
+<!-- WhatsApp Icon Bottom Right -->
+<a href="https://wa.me/919508238384" class="whatsapp-icon-right" target="_blank">
+    <img src="./images/WhatsApp_icon.png" alt="WhatsApp">
+</a>
+
+
+<special-header>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-static-top" style="background-color: rgba(255, 255, 31, 1);">
+        <a class="navbar-brand1" href="index.html">
+            <img src="./images/WRAPCHICK.png" alt="WrapChick Logo" class="d-inline-block align-top" height="80">
+        </a>
+        <a class="franchise-enquiry fixed-enquiry" aria-current="page" href="https://wa.me/919508238384" target="_blank">FRANCHISE ENQUIRY
+            <span class="phone-number">+91-9508238384</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="index.html">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html">ABOUT US</a>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html">GALLERY</a>
+                </li>
+                <li class="nav-item">
+                    <a href="menu.html">MENU</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blog.html">BLOGS</a>
+                </li>
+                <a class="navbar-brand2" href="index.html">
+                    <img src="./images/WRAPCHICK.png" alt="WrapChick Logo" class="d-inline-block align-top" height="80">
+                </a>
+                <li class="nav-item">
+                    <a href="franchise.html">FRANCHISE ENQUIRY</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="Storelocator.html">STORE LOCATOR</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+</special-header>
+    
+    <div class="video-container">
+        <video autoplay loop muted playsinline>
+            <source src="./images/video.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Food section begins -->
+    <div id="food">
+        <h1 id="section">WHAT WE OFFER!</h1>
+        <div class="responsive flip-container">
+            <div class="flipper">
+                <div class="front">
+                    <img src="./images/1 (1).jpg">
+                    <div class="desc">Enjoy our mouth-watering pizza topped with a layer of melted cheese.</div>
+                </div>
+                <div class="back">
+                    <img src="./images/1.jpg" alt="Menu 1">
+                </div>
+            </div>
+        </div>
+        <div class="responsive flip-container">
+            <div class="flipper">
+                <div class="front">
+                    <img src="./images/2 (1).jpg">
+                    <div class="desc">Savor our crispy, golden-brown fried chicken, seasoned to perfection.</div>
+                </div>
+                <div class="back">
+                    <img src="./images/2.png" alt="Menu 2">
+                </div>
+            </div>
+        </div>
+        <div class="responsive flip-container">
+            <div class="flipper">
+                <div class="front">
+                    <img src="./images/3.jpg">
+                    <div class="desc"> Indulge in our juicy burger loaded with fresh toppings and a flavorful patty.</div>
+                </div>
+                <div class="back">
+                    <img src="./images/3.png" alt="Menu 3">
+                </div>
+            </div>
+        </div>
+        <div class="responsive flip-container">
+            <div class="flipper">
+                <div class="front">
+                    <img src="./images/5.jpg" >
+                    <div class="desc">Embrace summer vibes with our invigorating and refreshing drink today!</div>
+                </div>
+                <div class="back">
+                    <img src="./images/4.png" alt="Menu 4">
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+<!--CLIENT GALLERY-->
+<section class="client-gallery">
+    <h2>CLIENT GALLERY</h2>
+    <div class="gallery">
+        <div class="video-contain">
+            <video id="video1" loop playsinline class="video-item">
+                <source src="./images/v1.mp4" type="video/mp4">
+            </video>
+            <i id="playPause1" class="fas fa-play play-icon" onclick="togglePlay('video1', 'playPause1')"></i>
+            <i id="stop1" class="fas fa-stop stop-icon" onclick="stopVideo('video1', 'playPause1')"></i>
+        </div>
+        <div class="video-contain">
+            <video id="video2" loop playsinline class="video-item">
+                <source src="./images/v2.mp4" type="video/mp4">
+            </video>
+            <i id="playPause2" class="fas fa-play play-icon" onclick="togglePlay('video2', 'playPause2')"></i>
+            <i id="stop2" class="fas fa-stop stop-icon" onclick="stopVideo('video2', 'playPause2')"></i>
+        </div>
+        <div class="video-contain">
+            <video id="video3" loop playsinline class="video-item">
+                <source src="./images/v3.MP4" type="video/mp4">
+            </video>
+            <i id="playPause3" class="fas fa-play play-icon" onclick="togglePlay('video3', 'playPause3')"></i>
+            <i id="stop3" class="fas fa-stop stop-icon" onclick="stopVideo('video3', 'playPause3')"></i>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+    <!-- SUCCESSFUL STORIES -->
+    <div id="SUCCESSFUL-STORIES">
+    <div id="places">
+        <h1 id="section">SUCCESSFUL STORIES</h1>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <img src="./images/1.jpeg" alt="Image 1" width="75%">
+                    <div class="place-name">Forbesganj</div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <img src="./images/2.jpeg" alt="Image 2" width="75%">
+                    <div class="place-name">Aurangabad</div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <img src="./images/3.jpeg" alt="Image 3" width="75%">
+                    <div class="place-name">Seohar</div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <img src="./images/4.jpeg" alt="Image 4" width="75%">
+                    <div class="place-name">Deoghar</div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <img src="./images/5.jpeg" alt="Image 5" width="75%">
+                    <div class="place-name">Supaul</div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <img src="./images/6.jpeg" alt="Image 6" width="75%">
+                    <div class="place-name">Boring Road, Patna</div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <img src="./images/7.jpeg" alt="Image 7" width="75%">
+                    <div class="place-name">Araria</div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <img src="./images/8.jpeg" alt="Image 8" width="75%">
+                    <div class="place-name">Haur</div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <img src="./images/9.jpeg" alt="Image 9" width="75%">
+                    <div class="place-name">Barauni</div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <img src="./images/r.jpeg" alt="Image 10" width="75%">
+                    <div class="place-name">Gaya</div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <img src="./images/11.jpeg" alt="Image 11" width="75%">
+                    <div class="place-name">Deulia</div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <img src="./images/12.jpeg" alt="Image 12" width="75%">
+                    <div class="place-name">Anisabad, Patna</div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <img src="./images/13.jpeg" alt="Image 13" width="75%">
+                    <div class="place-name">Darbhanga</div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <img src="./images/14.jpeg" alt="Image 14" width="75%">
+                    <div class="place-name">Ratu Road, Ranchi</div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <img src="./images/15.jpeg" alt="Image 15" width="75%">
+                    <div class="place-name">Samastipur</div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <img src="./images/16.jpeg" alt="Image 16" width="75%">
+                    <div class="place-name">Kankarbagh, Patna</div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <img src="./images/17.jpeg" alt="Image 17" width="75%">
+                    <div class="place-name">Panskura</div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <img src="./images/18.jpeg" alt="Image 18" width="75%">
+                    <div class="place-name">Chakna</div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <img src="./images/19.jpeg" alt="Image 19" width="75%">
+                    <div class="place-name">Jehanabad</div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    </div>
+    </div>
+
+    <div class="statistics-section">
+        <div class="stat-box">
+            <div class="icon"><i class="fa fa-shop"></i>
+            </div>
+            <div class="counter" id="counter1">21</div>
+            <div class="description">21+ Successful Outlet</div>
+        </div>
+        <div class="stat-box">
+            <div class="icon"><i class="fa-solid fa-clipboard-list"></i>
+            </div>
+            <div class="counter" id="counter2">200</div>
+            <div class="description">200+ Menu Items</div>
+        </div>
+        <div class="stat-box">
+            <div class="icon"><i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="counter" id="counter3">10000</div>
+            <div class="description">10000 Daily Order</div>
+        </div>
+        <div class="stat-box">
+            <div class="icon"><i class="fa-solid fa-map-location-dot"></i>
+            </div>
+            <div class="counter" id="counter4">3</div>
+            <div class="description">3+ State in India</div>
+        </div>
+    </div>
+
+
+
+    
+    <h2 class="fp-title">FRANCHISE PARTNER</h2>
+    <div class="fp-swiper-container swiper-container">
+        <div class="fp-swiper-wrapper swiper-wrapper">
+            <div class="swiper-slide fp-slide">
+                <div class="fp-image-container">
+                    <img src="./images/A (1).jpeg" alt="Partner Image" style="position:relative; top: 0px;">
+                </div>
+                <p class="fp-quote">"As a proud franchise owner of Wrapchick Pizza, I've experienced phenomenal growth and success, fueled by a robust business model and exceptional brand reputation."</p>
+            </div>
+
+            <div class="swiper-slide fp-slide">
+                <div class="fp-image-container">
+                    <img src="./images/A (2).jpeg" alt="Partner Image" style="position:relative; top: 20px;">
+                </div>
+                <p class="fp-quote">"Owning a Wrapchick Pizza franchise has been a dream come true; their innovative approach to flavors and strong franchise support make every day exciting and profitable."</p>
+            </div>
+
+            <div class="swiper-slide fp-slide">
+                <div class="fp-image-container">
+                    <img src="./images/A (3).jpeg" alt="Partner Image" style="position:relative; right:20px; top: 20px;">
+                </div>
+                <p class="fp-quote">"Running my Wrapchick Pizza franchise is a testament to the brand's commitment to quality, customer satisfaction, and franchisee success—a truly fulfilling business venture."</p>
+            </div>
+
+            <div class="swiper-slide fp-slide">
+                <div class="fp-image-container">
+                    <img src="./images/A (4).jpeg" alt="Partner Image" style="position:relative; top: 20px;">
+                </div>
+                <p class="fp-quote">"Wrapchick Pizza has provided me with the tools and support needed to succeed as a franchise owner; their commitment to excellence shines through in every aspect of the business."</p>
+            </div>
+            <div class="swiper-slide fp-slide">
+                <div class="fp-image-container">
+                    <img src="./images/A (5).jpeg" alt="Partner Image" style="position:relative; right: 20px; bottom: 10px;">
+                </div>
+                <p class="fp-quote">"I'm proud to be a franchisee of Wrapchick Pizza; their innovative recipes and strong brand identity have set us apart, attracting loyal customers and driving consistent growth."</p>
+            </div>
+            <div class="swiper-slide fp-slide">
+                <div class="fp-image-container">
+                    <img src="./images/A (6).jpeg" alt="Partner Image">
+                </div>
+                <p class="fp-quote">"Being part of the Wrapchick Pizza family has been incredibly rewarding; their dedication to franchisee support and gourmet pizza offerings make it a standout in the industry."</p>
+            </div>
+            <div class="swiper-slide fp-slide">
+                <div class="fp-image-container">
+                    <img src="./images/A(7).jpeg" alt="Partner Image" style="position:relative; left: 10px; bottom: 40px;">
+                </div>
+                <p class="fp-quote">"The decision to invest in a Wrapchick Pizza franchise was the best I've made; their proven track record in the industry and delicious offerings make it a joy to serve our community."</p>
+            </div>
+            <div class="swiper-slide fp-slide">
+                <div class="fp-image-container">
+                    <img src="./images/A(8).jpeg" alt="Partner Image" style="position:relative; left: 10px; bottom: 30px; right: 10px; transform: (45deg);">
+                </div>
+                <p class="fp-quote">"Wrapchick Pizza's franchise program has exceeded my expectations; their operational guidance and flavorful menu options have made my business thrive in our competitive market."</p>
+            </div>
+            <div class="swiper-slide fp-slide">
+                <div class="fp-image-container">
+                    <img src="./images/A(9).jpeg" alt="Partner Image" style="position:relative; left: 10px; bottom: 30px; right: 10px; transform: (45deg);">
+                </div>
+                <p class="fp-quote">"Owning a Wrapchick Pizza franchise has been a fulfilling experience; their menu diversity, operational support, and brand reputation make it a lucrative investment."</p>
+            </div>
+
+
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination fp-pagination"></div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-next fp-button-next"></div>
+        <div class="swiper-button-prev fp-button-prev"></div>
+    </div>
+
+
+<!--Franchise Section-->
+<div class="franchise-section">
+    <div class="franchise-content">
+        <h2>Looking For A Food Franchise Business?</h2>
+        <a href="https://wa.me/919508238384" target="_blank" class="book-now-link">
+            <button class="book-now-button">BOOK NOW</button>
+        </a>
+    </div>
+</div>
+
+    <special-footer>      
+<!-- Footer section begins-->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h5 class="text-uppercase">Contact Us</h5>
+                        <ul class="contact-info">
+                            <i class="fas fa-map-marker-alt"></i> Khata 40,Khesra 81,Sadar Road,Forbesganj, Bihar 854318<br>
+                            <a href="https://wa.me/919508238384" target="_blank"><i class="fas fa-phone"></i> +91-9508238384 </a><br>
+                            
+                            <a href="mailto:enquirywrapchickpizza@gmail.com"><i class="fas fa-envelope"></i> enquirywrapchickpizza@gmail.com </a>
+                        </ul>
+                    </div>
+                    
+                    <div class="col">
+                        <h5 class="text-uppercase">Quick Links</h5>
+                        <ul class="quick-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="menu.html">Menu</a></li>
+                            <li><a href="blog.html">Blogs</a></li>
+                            <li><a href="franchise.html">Franchise Enquiry</a></li>
+                            <li><a href="Storelocator.html">Store Locator</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col">
+                        <h5 class="text-uppercase">Follow Us</h5>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/wrapchickpizzaofficial?mibextid=LQQJ4d"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/wrapchickpizza?igsh=bXF2MWR1c3RuaTVs"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/wrapchickpizza/"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center p-3">
+                &copy; 2024 WrapChick Pizza. All rights reserved.
+            </div>
+        </footer>
+        </special-footer>
+
+    <script>
+
+function togglePlay(videoId, iconId) {
+    var video = document.getElementById(videoId);
+    var icon = document.getElementById(iconId);
+    if (video.paused) {
+        video.play();
+        icon.classList.remove('fa-play');
+        icon.classList.add('fa-pause');
+    } else {
+        video.pause();
+        icon.classList.remove('fa-pause');
+        icon.classList.add('fa-play');
+    }
+}
+
+function stopVideo(videoId, iconId) {
+    var video = document.getElementById(videoId);
+    var icon = document.getElementById(iconId);
+    video.pause();
+    video.currentTime = 0;
+    icon.classList.remove('fa-pause');
+    icon.classList.add('fa-play');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+            var swiper = new Swiper('.mySwiper', {
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                slidesPerView: 3,
+                spaceBetween: 30,
+                centeredSlides: true,
+                loop: true,
+                autoplay: {
+                delay: 1000, // 1 second
+                disableOnInteraction: false, // Continue autoplay after user interactions
+            },
+
+            });
+        });
+
+        jQuery.noConflict();
+(function($) {
+    // Your jQuery code using $ as an alias
+    $(document).ready(function() {
+        $('.counter').counterUp({
+            delay: 10,
+            time: 1200
+        });
+    });
+})(jQuery);
+
+
+  
+  document.addEventListener('DOMContentLoaded', function() {
+        var swiper = new Swiper('.fp-swiper-container', {
+            navigation: {
+                nextEl: '.fp-button-next',
+                prevEl: '.fp-button-prev',
+            },
+            slidesPerView: 1,
+            spaceBetween: 30,
+            centeredSlides: true,
+            loop: true,
+            autoplay: {
+                delay: 2000, // 2 second
+                disableOnInteraction: false, // Continue autoplay after user interactions
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 1
+                }
+            }
+        });
+    });
+
+
+
+
+    </script>
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
